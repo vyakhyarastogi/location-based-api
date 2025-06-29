@@ -8,6 +8,8 @@ const PORT = process.env.PORT || 3000;
 // Serve static files from "public" folder
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.set("trust proxy", true);
+
 app.get('/location-based-content', async (req, res) => {
     try {
         const clientIP =
